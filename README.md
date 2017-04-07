@@ -73,6 +73,10 @@ Others
 History Log
 ------------------
     
+- 1.1.2 -- 2017-04-07
+
+    - fix conf error
+
 - 1.1.1 -- 2017-04-07
 
     - fix typo2 

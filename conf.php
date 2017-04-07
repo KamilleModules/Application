@@ -9,5 +9,5 @@ $conf = [
     /**
      * The default controller called when the website is in maintenance mode
      */
-    "maintenanceController" => 'Controller\Core\MaintenanceController:render',
+    "maintenanceController" => 'Controller\Application\MaintenanceController:render',
 ];

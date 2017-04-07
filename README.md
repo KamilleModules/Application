@@ -73,6 +73,12 @@ Others
 History Log
 ------------------
     
+- 1.1.0 -- 2017-04-07
+
+    - fix typo 
+
 - 1.0.0 -- 2017-04-07
 
     - initial commit
+
+

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Module\Core;
+namespace Module\Application;
 
 
 

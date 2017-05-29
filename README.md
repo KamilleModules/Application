@@ -73,6 +73,10 @@ Others
 History Log
 ------------------
     
+- 1.2.0 -- 2017-05-29
+
+    - add email.from configuration key 
+    
 - 1.1.0 -- 2017-04-07
 
     - fix typo 

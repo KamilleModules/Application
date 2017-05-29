@@ -73,6 +73,10 @@ Others
 History Log
 ------------------
     
+- 1.3.0 -- 2017-05-29
+
+    - add site.name configuration key 
+    
 - 1.2.0 -- 2017-05-29
 
     - add email.from configuration key 

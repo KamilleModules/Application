@@ -11,4 +11,12 @@ $conf = [
      */
     "maintenanceController" => 'Controller\Application\MaintenanceController:render',
     "email.from" => 'contact@mysite.com',
+    /**
+     *
+     * Used in:
+     *
+     * - email communication (in the subject, to help the user identifying
+     *          that the mail comes from YOUR website).
+     */
+    "site.name" => 'mysite',
 ];

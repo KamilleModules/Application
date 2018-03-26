@@ -6,6 +6,7 @@ namespace Module\Application\Back\Helper;
 
 use Core\Services\Hooks;
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
+use Kamille\Utils\Morphic\Helper\MorphicGeneratorHelper;
 use Models\AdminSidebarMenu\Lee\LeeAdminSidebarMenuModel;
 use Models\AdminSidebarMenu\Lee\Objects\Item;
 use Models\AdminSidebarMenu\Lee\Objects\Section;
@@ -43,7 +44,7 @@ class ApplicationBackHooksHelper
         //--------------------------------------------
         // GENERATED PART
         //--------------------------------------------
-        $generatedItemFile = BackHooksHelper::getGeneratedMenuLocation();
+        $generatedItemFile = MorphicGeneratorHelper::getGeneratedMenuLocation("Application");
         if (file_exists($generatedItemFile)) {
             /**
              * Tip: use EkomNullosMorphicGenerator (the morphic-generator.php script) to
@@ -63,23 +64,10 @@ class ApplicationBackHooksHelper
 
 
         $menuItems = [
+            'Application.section' => $section,
             'Application.utils' => $utilsItem,
         ];
         Hooks::call("Application_decorateLeftMenu", $menuItems);
 
-    }
-
-
-
-
-    public static function getGeneratedMenuLocation()
-    {
-        return ApplicationParameters::get("app_dir") . "/store/Application/Nullos/generated-menu.php";
-    }
-
-
-    public static function getGeneratedRoutesLocation()
-    {
-        return ApplicationParameters::get("app_dir") . "/store/Application/Nullos/generated-routes.php";
     }
 }

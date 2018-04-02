@@ -11,11 +11,11 @@ use Kamille\Module\KamilleModule;
 class ApplicationModule extends KamilleModule
 {
 
-    protected function getWidgets(){
-        return [
-            'KamilleWidgets.Maintenance',
-        ];
-    }
+//    protected function getWidgets(){
+//        return [
+//            'KamilleWidgets.Maintenance',
+//        ];
+//    }
 
 }
 

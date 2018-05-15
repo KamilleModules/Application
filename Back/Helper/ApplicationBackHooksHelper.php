@@ -4,6 +4,7 @@
 namespace Module\Application\Back\Helper;
 
 
+use Core\Services\A;
 use Core\Services\Hooks;
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Utils\Morphic\Helper\MorphicGeneratorHelper;
@@ -33,11 +34,21 @@ class ApplicationBackHooksHelper
             ->setLink("#");
 
 
+        $configItem = Item::create()
+            ->setActive(true)
+            ->setName("Application.config")
+            ->setLabel("Configuration")
+            ->setIcon("fa fa-cog")
+            ->setLink(A::link("Application_Config_Config_Form"));
+
+
         $section
             //--------------------------------------------
             // UTILS
             //--------------------------------------------
-            ->addItem($utilsItem);
+            ->addItem($configItem)
+//            ->addItem($utilsItem)
+        ;
 
 
 

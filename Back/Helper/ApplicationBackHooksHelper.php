@@ -47,7 +47,7 @@ class ApplicationBackHooksHelper
             // UTILS
             //--------------------------------------------
             ->addItem($configItem)
-//            ->addItem($utilsItem)
+            ->addItem($utilsItem)
         ;
 
 

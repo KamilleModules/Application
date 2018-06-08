@@ -15,6 +15,11 @@ use Models\AdminSidebarMenu\Lee\Objects\Section;
 class ApplicationBackHooksHelper
 {
 
+    public static function CacheHub_collectCacheDeleteIdentifiers(array &$identifiers)
+    {
+        $identifiers[] = "ap_variables";
+    }
+
 
     public static function NullosAdmin_layout_sideBarMenuModelObject(LeeAdminSidebarMenuModel $sideBarMenuModel)
     {
@@ -47,9 +52,7 @@ class ApplicationBackHooksHelper
             // UTILS
             //--------------------------------------------
             ->addItem($configItem)
-            ->addItem($utilsItem)
-        ;
-
+            ->addItem($utilsItem);
 
 
         //--------------------------------------------
@@ -70,8 +73,6 @@ class ApplicationBackHooksHelper
             include $generatedItemFile;
             $section->addItem($generatedItem);
         }
-
-
 
 
         $menuItems = [

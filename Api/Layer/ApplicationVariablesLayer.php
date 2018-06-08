@@ -3,6 +3,7 @@
 
 namespace Module\Application\Api\Layer;
 
+use Core\Services\A;
 use Module\Application\Api\Object\Variables;
 use QuickPdo\QuickPdo;
 
@@ -45,11 +46,14 @@ class ApplicationVariablesLayer
     public static function getVariables()
     {
         if (null === self::$vars) {
+
             /**
              * This should be the only call to the db in this class (perf optimization).
              * Also we should consider caching it...
              */
-            self::$vars = QuickPdo::fetchAll("select `name`, `value` from ap_variables", [], \PDO::FETCH_COLUMN | \PDO::FETCH_UNIQUE);
+            self::$vars = A::cache()->get("ap_variables", function () {
+                return QuickPdo::fetchAll("select `name`, `value` from ap_variables", [], \PDO::FETCH_COLUMN | \PDO::FETCH_UNIQUE);
+            }, 'ap_variables');
         }
         return self::$vars;
     }
@@ -101,6 +105,8 @@ class ApplicationVariablesLayer
         ], [
             "id" => $id,
         ]);
+
+        A::cache()->deleteByCacheIdentifier("ap_variables");
         return $id;
     }
 

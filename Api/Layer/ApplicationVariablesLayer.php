@@ -51,7 +51,7 @@ class ApplicationVariablesLayer
              * This should be the only call to the db in this class (perf optimization).
              * Also we should consider caching it...
              */
-            self::$vars = A::cache()->get("ap_variables", function () {
+            self::$vars = A::cache()->get("Application.ApplicationVariablesLayer.getVariables", function () {
                 return QuickPdo::fetchAll("select `name`, `value` from ap_variables", [], \PDO::FETCH_COLUMN | \PDO::FETCH_UNIQUE);
             }, 'ap_variables');
         }

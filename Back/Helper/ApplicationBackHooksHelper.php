@@ -18,6 +18,7 @@ class ApplicationBackHooksHelper
     public static function CacheHub_collectCacheDeleteIdentifiers(array &$identifiers)
     {
         $identifiers[] = "ap_variables";
+        $identifiers[] = "_route_";
     }
 
 

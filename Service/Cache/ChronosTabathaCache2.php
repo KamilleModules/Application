@@ -13,7 +13,7 @@ use TabathaCache\Cache\TabathaCache2;
  *
  *
  */
-class ChronosTabathaCache2 extends TabathaCache2
+class ChronosTabathaCache2 extends ApplicationTabathaCache2
 {
     protected $debug;
 

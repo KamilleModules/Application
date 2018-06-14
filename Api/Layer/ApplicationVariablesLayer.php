@@ -106,7 +106,7 @@ class ApplicationVariablesLayer
             "id" => $id,
         ]);
 
-        A::cache()->deleteByCacheIdentifier("ap_variables");
+        A::cache()->clean("ap_variables");
         return $id;
     }
 
